@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tshwanelo Digital Solutions | Digital Systems That Grow Your Business</title>
+<meta name="description" content="Tshwanelo Digital Solutions builds websites, booking systems, AI receptionists and business automation for South African SMEs. Powered by Stayflow.">
+<meta name="theme-color" content="#0a0e17">
+
+<!-- Open Graph for WhatsApp/social sharing -->
+<meta property="og:title" content="Tshwanelo Digital Solutions">
+<meta property="og:description" content="We don't just build websites. We build digital systems that grow your business.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tshwanelodigital.co.za">
+<meta property="og:image" content="https://tshwanelodigital.co.za/og-image.png">
+
+<!-- Favicon (SVG - inline) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='100' y2='100'%3E%3Cstop offset='0%25' stop-color='%2300e0b8'/%3E%3Cstop offset='100%25' stop-color='%2300b8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M50 8 L56 8 L58 22 C62 23 66 24.5 69.5 26.5 L78 18 L82 22 L74 30.5 C76 34 77.5 38 78.5 42 L92 44 L92 50 L78.5 52 C77.5 56 76 60 74 63.5 L82 72 L78 76 L69.5 67.5 C66 69.5 62 71 58 72 L56 86 L50 86 L48 72 C44 71 40 69.5 36.5 67.5 L28 76 L24 72 L32 63.5 C30 60 28.5 56 27.5 52 L14 50 L14 44 L27.5 42 C28.5 38 30 34 32 30.5 L24 22 L28 18 L36.5 26.5 C40 24.5 44 23 48 22 L50 8 Z' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='47' r='10' fill='%230a0e17'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0a0e17;
+  --bg-2:#0f1420;
+  --card:#131826;
+  --border:#1e2436;
+  --text:#eef1f8;
+  --muted:#8b93a8;
+  --accent:#00e0b8;
+  --accent-2:#00b8ff;
+  --brand:#00b8ff;
+  --accent-glow:rgba(0,224,184,.35);
+  --grad:linear-gradient(135deg,#00e0b8 0%,#00b8ff 100%);
+  --grad-soft:linear-gradient(135deg,rgba(0,224,184,.12),rgba(0,184,255,.12));
+  --wa:#25d366;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== BACKGROUND ===== */
+.bg-fx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg-fx::before{
+  content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,224,184,.14) 0%,transparent 65%);
+  filter:blur(60px);
+}
+.bg-fx::after{
+  content:'';position:absolute;bottom:-30%;right:-10%;
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,184,255,.10) 0%,transparent 65%);
+  filter:blur(60px);
+}
+.grid-overlay{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%);
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s;
+}
+nav.scrolled{
+  background:rgba(10,14,23,.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);padding:10px 0;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo-svg{width:46px;height:46px;flex-shrink:0;transition:transform .3s}
+.logo:hover .logo-svg{transform:rotate(-8deg) scale(1.05)}
+.logo-text-wrap{display:flex;flex-direction:column}
+.logo-text{font-family:'Space Grotesk';font-weight:700;font-size:16px;letter-spacing:-.02em;line-height:1.1}
+.logo-text span{color:var(--accent)}
+.logo-sub{font-size:9.5px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-weight:500;margin-top:2px}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:14.5px;color:var(--muted);font-weight:500;transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;
+  background:var(--grad);transition:width .3s;border-radius:2px;
+}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  padding:11px 20px;border-radius:10px;background:var(--grad);color:#04140f;
+  font-weight:700;font-size:14px;transition:.2s;box-shadow:0 6px 20px var(--accent-glow);
+  display:inline-flex;align-items:center;gap:7px;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--accent-glow)}
+.nav-cta.wa{background:var(--wa);color:#fff;box-shadow:0 6px 20px rgba(37,211,102,.3)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.mobile-menu{
+  display:none;position:fixed;top:70px;left:0;right:0;z-index:999;
+  background:rgba(15,20,32,.98);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);padding:24px;flex-direction:column;gap:6px;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:14px 16px;border-radius:10px;color:var(--muted);font-weight:500;transition:.2s}
+.mobile-menu a:hover{background:var(--bg-2);color:var(--text)}
+
+/* ===== HERO ===== */
+.hero{padding:160px 0 90px;position:relative}
+.badge{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:100px;
+  background:var(--grad-soft);border:1px solid rgba(0,224,184,.25);
+  font-size:13px;font-weight:600;color:var(--accent);margin-bottom:26px;
+}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:700;margin-bottom:22px;max-width:17ch}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(1rem,1.7vw,1.2rem);color:var(--muted);max-width:60ch;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:12px;
+  font-weight:700;font-size:15px;cursor:pointer;border:none;transition:.25s;font-family:'Inter';
+}
+.btn-primary{background:var(--grad);color:#04140f;box-shadow:0 10px 30px var(--accent-glow)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px var(--accent-glow)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.28)}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(37,211,102,.4)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--accent);background:var(--grad-soft);transform:translateY(-3px)}
+.hero-stats{display:flex;gap:44px;flex-wrap:wrap;padding-top:34px;border-top:1px solid var(--border)}
+.stat .num{font-family:'Space Grotesk';font-size:1.9rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .label{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+/* ===== SECTION ===== */
+section{padding:88px 0;position:relative}
+.section-head{text-align:center;max-width:720px;margin:0 auto 60px}
+.eyebrow{
+  font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;
+  color:var(--accent);margin-bottom:14px;display:block;
+}
+.section-head h2{font-size:clamp(1.85rem,4vw,2.8rem);font-weight:700;margin-bottom:16px}
+.section-head p{color:var(--muted);font-size:1.05rem}
+
+/* ===== GRIDS ===== */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:32px 28px;transition:.3s;position:relative;overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,224,184,.5),transparent);
+  opacity:0;transition:.3s;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(0,224,184,.35);background:#171d2e}
+.card:hover::before{opacity:1}
+.card-icon{
+  width:52px;height:52px;border-radius:14px;background:var(--grad-soft);
+  border:1px solid rgba(0,224,184,.2);display:grid;place-items:center;
+  margin-bottom:20px;font-size:24px;
+}
+.card h3{font-size:1.2rem;margin-bottom:11px;font-weight:600}
+.card p{color:var(--muted);font-size:.94rem}
+
+/* ===== PROBLEM ===== */
+.problem-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.problem-item{
+  display:flex;gap:12px;align-items:flex-start;padding:15px 17px;
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  font-size:.9rem;color:var(--muted);transition:.25s;
+}
+.problem-item:hover{border-color:rgba(255,90,90,.3)}
+.problem-item .x{color:#ff6b6b;font-weight:700;flex-shrink:0}
+
+/* ===== FLOW ===== */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:20px}
+.flow-step{
+  padding:13px 18px;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;font-size:.85rem;font-weight:600;transition:.25s;white-space:nowrap;
+}
+.flow-step:hover{border-color:var(--accent);background:var(--grad-soft);transform:scale(1.05)}
+.flow-arrow{color:var(--accent);font-size:1.1rem}
+
+/* ===== PRICING ===== */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}
+.price-card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:32px 26px;transition:.3s;position:relative;display:flex;flex-direction:column;
+}
+.price-card:hover{transform:translateY(-6px);border-color:rgba(0,224,184,.35)}
+.price-card.featured{
+  border-color:var(--accent);background:linear-gradient(180deg,rgba(0,224,184,.08),var(--card));
+  box-shadow:0 20px 60px -20px var(--accent-glow);
+}
+.price-card.featured::after{
+  content:'MOST POPULAR';position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--grad);color:#04140f;font-size:10px;font-weight:800;letter-spacing:1.5px;
+  padding:5px 14px;border-radius:100px;white-space:nowrap;
+}
+.price-card h3{font-size:1.12rem;margin-bottom:8px;font-weight:600}
+.price-card .desc{font-size:.84rem;color:var(--muted);margin-bottom:18px;min-height:36px}
+.price{font-family:'Space Grotesk';font-size:2.3rem;font-weight:700;margin-bottom:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.price-note{font-size:12px;color:var(--muted);margin-bottom:22px}
+.features{list-style:none;margin-bottom:24px;flex-grow:1}
+.features li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:.86rem;color:var(--muted)}
+.features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+.price-card .btn{width:100%;justify-content:center}
+.price-card .btn-group{display:flex;flex-direction:column;gap:8px}
+.price-card .btn-wa-sm{
+  padding:11px;font-size:13px;background:var(--wa);color:#fff;border-radius:10px;
+  font-weight:700;text-align:center;transition:.2s;display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.price-card .btn-wa-sm:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.3)}
+
+/* ===== STAYFLOW ===== */
+.stayflow{background:linear-gradient(180deg,transparent,rgba(0,184,255,.05),transparent)}
+.stayflow-visual{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:26px;box-shadow:0 30px 80px -30px rgba(0,0,0,.6);
+}
+.sf-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.sf-dots{display:flex;gap:6px}
+.sf-dots span{width:11px;height:11px;border-radius:50%}
+.sf-dots span:nth-child(1){background:#ff5f57}
+.sf-dots span:nth-child(2){background:#febc2e}
+.sf-dots span:nth-child(3){background:#28c840}
+.sf-title{font-size:13px;color:var(--muted);font-weight:600;margin-left:8px}
+.sf-body{display:grid;gap:11px}
+.sf-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 15px;background:var(--bg-2);border:1px solid var(--border);
+  border-radius:10px;font-size:.86rem;
+}
+.sf-row .name{display:flex;align-items:center;gap:10px;font-weight:600}
+.sf-status{padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700}
+.sf-status.confirmed{background:rgba(40,200,64,.15);color:#28c840}
+.sf-status.pending{background:rgba(254,188,46,.15);color:#febc2e}
+.sf-status.new{background:rgba(0,224,184,.15);color:var(--accent)}
+.stayflow-cta{
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;
+}
+.stayflow-cta .btn{flex:1;min-width:180px;justify-content:center}
+
+/* ===== PROCESS ===== */
+.steps{display:grid;gap:18px}
+.step{
+  display:flex;gap:20px;align-items:flex-start;padding:24px;
+  background:var(--card);border:1px solid var(--border);border-radius:16px;transition:.3s;
+}
+.step:hover{border-color:rgba(0,224,184,.35);transform:translateX(6px)}
+.step-num{
+  width:44px;height:44px;border-radius:12px;background:var(--grad);color:#04140f;
+  display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;
+  font-size:1.1rem;flex-shrink:0;
+}
+.step h4{font-size:1.05rem;margin-bottom:5px;font-weight:600}
+.step p{color:var(--muted);font-size:.88rem}
+
+/* ===== CTA BANNER ===== */
+.cta-banner{
+  background:linear-gradient(135deg,rgba(0,224,184,.14),rgba(0,184,255,.1));
+  border:1px solid rgba(0,224,184,.3);border-radius:26px;padding:60px 36px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:-50%;left:-10%;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(0,224,184,.2),transparent 70%);filter:blur(40px);
+}
+.cta-banner h2{font-size:clamp(1.6rem,3.5vw,2.5rem);margin-bottom:14px;position:relative}
+.cta-banner p{color:var(--muted);max-width:600px;margin:0 auto 30px;position:relative}
+.cta-banner .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:16px}
+.contact-item{
+  display:flex;gap:16px;align-items:center;padding:18px;background:var(--card);
+  border:1px solid var(--border);border-radius:14px;transition:.25s;
+}
+.contact-item:hover{border-color:rgba(0,224,184,.3)}
+.contact-item .ic{
+  width:44px;height:44px;border-radius:11px;background:var(--grad-soft);
+  border:1px solid rgba(0,224,184,.2);display:grid;place-items:center;font-size:19px;flex-shrink:0;
+}
+.contact-item .lbl{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.contact-item .val{font-weight:600;font-size:.94rem}
+.contact-item a{transition:.2s}
+.contact-item a:hover{color:var(--accent)}
+form{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--muted)}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border-radius:10px;background:var(--bg-2);
+  border:1px solid var(--border);color:var(--text);font-family:'Inter';font-size:14px;transition:.2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#0d121e}
+.field textarea{resize:vertical;min-height:110px}
+form .btn{width:100%;justify-content:center;margin-top:6px}
+.form-note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--border);padding:56px 0 28px;margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+.foot-brand p{color:var(--muted);font-size:.88rem;margin-top:16px;max-width:300px}
+.foot-col h5{font-size:12.5px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;color:var(--text);font-weight:700}
+.foot-col a{display:block;color:var(--muted);font-size:.88rem;padding:5px 0;transition:.2s}
+.foot-col a:hover{color:var(--accent);padding-left:4px}
+.foot-bottom{
+  border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:14px;font-size:.83rem;color:var(--muted);
+}
+.foot-bottom .made span{color:var(--accent)}
+
+/* ===== FLOATING WHATSAPP ===== */
+.wa-float{
+  position:fixed;bottom:22px;right:22px;z-index:998;
+  width:60px;height:60px;border-radius:50%;background:var(--wa);
+  display:grid;place-items:center;box-shadow:0 8px 30px rgba(37,211,102,.45);
+  cursor:pointer;transition:.3s;animation:waFloat 3s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.1) rotate(8deg);box-shadow:0 12px 40px rgba(37,211,102,.6)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+.wa-float::after{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  border:2px solid var(--wa);animation:waRipple 2s infinite;
+}
+@keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes waRipple{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.wa-tooltip{
+  position:fixed;bottom:36px;right:94px;z-index:998;
+  background:var(--card);border:1px solid var(--border);color:var(--text);
+  padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;
+  box-shadow:0 8px 30px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.3s;
+  white-space:nowrap;
+}
+.wa-float:hover ~ .wa-tooltip,.wa-tooltip.show{opacity:1;transform:translateX(0)}
+.wa-tooltip{transform:translateX(10px)}
+.wa-tooltip::after{
+  content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);
+  width:10px;height:10px;background:var(--card);border-right:1px solid var(--border);
+  border-top:1px solid var(--border);rotate:45deg;
+}
+
+/* ===== ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .contact-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero{padding:125px 0 65px}
+  .hero-stats{gap:26px}
+  section{padding:64px 0}
+  .foot-grid{grid-template-columns:1fr}
+  .flow-step{font-size:.78rem;padding:10px 13px}
+  .cta-banner{padding:42px 22px}
+  .logo-text{font-size:14px}
+  .logo-sub{font-size:8.5px}
+  .logo-svg{width:40px;height:40px}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-fx"></div>
+<div class="grid-overlay"></div>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gearGrad" x1="0" y1="0" x2="100" y2="100">
+            <stop offset="0%" stop-color="#00e0b8"/>
+            <stop offset="100%" stop-color="#00b8ff"/>
+          </linearGradient>
+          <linearGradient id="circuitGrad" x1="0" y1="0" x2="100" y2="100">
+            <stop offset="0%" stop-color="#00b8ff"/>
+            <stop offset="100%" stop-color="#0d4a5c"/>
+          </linearGradient>
+        </defs>
+        <!-- Gear body -->
+        <path d="M50 4 L56 4 L58 15 C63 16 67.5 17.7 71.5 20 L80 11.5 L84 15.5 L75.5 24 C77.8 28 79.5 32.5 80.5 37.5 L91.5 39.5 L91.5 45.5 L80.5 47.5 C79.5 52.5 77.8 57 75.5 61 L84 69.5 L80 73.5 L71.5 65 C67.5 67.3 63 69 58 70 L56 81 L50 81 L48 70 C43 69 38.5 67.3 34.5 65 L26 73.5 L22 69.5 L30.5 61 C28.2 57 26.5 52.5 25.5 47.5 L14.5 45.5 L14.5 39.5 L25.5 37.5 C26.5 32.5 28.2 28 30.5 24 L22 15.5 L26 11.5 L34.5 20 C38.5 17.7 43 16 48 15 L50 4 Z" fill="url(#gearGrad)"/>
+        <!-- Inner circle -->
+        <circle cx="53" cy="42.5" r="11" fill="#0a0e17"/>
+        <!-- Circuit traces -->
+        <path d="M53 42.5 L53 30" stroke="url(#circuitGrad)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M53 42.5 L68 42.5" stroke="url(#circuitGrad)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M53 42.5 L43 32" stroke="url(#circuitGrad)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M53 42.5 L65 55" stroke="url(#circuitGrad)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M53 42.5 L38 52" stroke="url(#circuitGrad)" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- Circuit nodes -->
+        <circle cx="53" cy="28" r="3" fill="url(#circuitGrad)"/>
+        <circle cx="70" cy="42.5" r="3" fill="url(#circuitGrad)"/>
+        <circle cx="41" cy="30" r="3" fill="url(#circuitGrad)"/>
+        <circle cx="67" cy="57" r="3" fill="url(#circuitGrad)"/>
+        <circle cx="36" cy="53" r="3" fill="url(#circuitGrad)"/>
+      </svg>
+      <div class="logo-text-wrap">
+        <div class="logo-text">Tshwanelo<span>Digital</span></div>
+        <div class="logo-sub">Digital Solutions</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#stayflow">Stayflow</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" class="nav-cta wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+      WhatsApp
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#stayflow">Stayflow</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#process">Process</a>
+  <a href="#contact">Contact</a>
+  <a href="https://wa.me/27781308301" target="_blank" rel="noopener" style="background:var(--wa);color:#fff;text-align:center;margin-top:8px">Chat on WhatsApp</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container">
+    <div class="badge reveal">
+      <span class="dot"></span>
+      Trusted digital partner for South African businesses
+    </div>
+    <h1 class="reveal">We don't just build websites. We build <span class="grad">digital systems</span> that grow your business.</h1>
+    <p class="lead reveal">Tshwanelo Digital Solutions helps South African businesses get found online, take bookings, accept payments, and automate customer management — powered by our flagship platform, <strong style="color:var(--accent)">Stayflow</strong>.</p>
+    <div class="hero-btns reveal">
+      <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27d%20like%20a%20free%20demo%20of%20my%20own%20digital%20system" target="_blank" rel="noopener" class="btn btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+        Get Free Demo on WhatsApp
+      </a>
+      <a href="#pricing" class="btn btn-ghost">View Packages</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat"><div class="num">50%</div><div class="label">Deposit to start</div></div>
+      <div class="stat"><div class="num">7 Days</div><div class="label">Avg. delivery</div></div>
+      <div class="stat"><div class="num">24/7</div><div class="label">AI receptionist</div></div>
+      <div class="stat"><div class="num">R1,799</div><div class="label">Starting price</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Problem</span>
+      <h2>Great businesses lose customers every day — for avoidable reasons</h2>
+      <p>You spend money on advertising to bring enquiries in. But if nobody responds fast enough or the booking process is difficult, that money is wasted.</p>
+    </div>
+    <div class="problem-list">
+      <div class="problem-item reveal"><span class="x">✕</span> No professional website or an outdated one</div>
+      <div class="problem-item reveal"><span class="x">✕</span> Bookings handled manually through WhatsApp</div>
+      <div class="problem-item reveal"><span class="x">✕</span> Missed calls and enquiries outside business hours</div>
+      <div class="problem-item reveal"><span class="x">✕</span> Slow responses that lose customers to competitors</div>
+      <div class="problem-item reveal"><span class="x">✕</span> No automated follow-ups or reminders</div>
+      <div class="problem-item reveal"><span class="x">✕</span> Difficult, manual payment processes</div>
+      <div class="problem-item reveal"><span class="x">✕</span> Customer information scattered everywhere</div>
+      <div class="problem-item reveal"><span class="x">✕</span> No useful business data or reporting</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="solution" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Tshwanelo Solution</span>
+      <h2>We connect your online presence to your operational systems</h2>
+      <p>Instead of selling you a website and leaving you to operate it manually, we build the complete infrastructure that turns online visitors into paying customers.</p>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-step">📢 Ad / Google / Social</div><span class="flow-arrow">→</span>
+      <div class="flow-step">🌐 Professional Website</div><span class="flow-arrow">→</span>
+      <div class="flow-step">📩 Enquiry / Booking</div><span class="flow-arrow">→</span>
+      <div class="flow-step">🤖 Automated Response</div><span class="flow-arrow">→</span>
+      <div class="flow-step">💳 Payment</div><span class="flow-arrow">→</span>
+      <div class="flow-step">✅ Confirmation</div><span class="flow-arrow">→</span>
+      <div class="flow-step">👥 Customer Database</div><span class="flow-arrow">→</span>
+      <div class="flow-step">🔁 Repeat Business</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Everything you need to run a smarter business</h2>
+      <p>From a professional website to a full AI-powered business system — we cover the whole journey.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="card-icon">🌐</div>
+        <h3>Website Development</h3>
+        <p>Fast, mobile-friendly websites designed to convert visitors into paying customers. SEO structure, WhatsApp integration, and clear calls-to-action built in.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📅</div>
+        <h3>Booking Systems</h3>
+        <p>Let customers book online 24/7. Automated confirmations, reminders, and resource management so you never double-book again.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">💳</div>
+        <h3>Payment Integration</h3>
+        <p>Secure online payments through PayFast. Accept deposits, full payments, and recurring subscriptions directly on your site.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🤖</div>
+        <h3>AI Receptionist</h3>
+        <p>An AI that answers questions, captures leads, and assists with bookings — 24/7, even when you're closed. Never miss another enquiry.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">⚙️</div>
+        <h3>Business Automation</h3>
+        <p>Automated follow-ups, review requests, missed-call text-backs, and lead management. Save hours every week on repetitive admin work.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📊</div>
+        <h3>Customer Management</h3>
+        <p>A single dashboard for all your customers, bookings, and payments. Know exactly what's happening in your business at a glance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAYFLOW SHOWCASE ===== -->
+<section id="stayflow" class="stayflow">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Powered by Stayflow</span>
+      <h2>Your business operating system</h2>
+      <p>Stayflow is our flagship platform — a booking and business-management system built to help you run everything from one place.</p>
+    </div>
+
+    <div class="grid-2" style="align-items:center">
+      <div class="reveal">
+        <h3 style="font-size:1.55rem;margin-bottom:18px">Everything in one dashboard</h3>
+        <p style="color:var(--muted);margin-bottom:26px">Manage bookings, customers, resources, payments and automated communication from a single system. Built for accommodation, salons, clinics, restaurants, and any appointment-based business.</p>
+        <ul class="features" style="margin-bottom:26px">
+          <li>Public booking pages for your customers</li>
+          <li>Full booking & resource management</li>
+          <li>Customer database & history</li>
+          <li>Automated SMS, WhatsApp & email notifications</li>
+          <li>Integrated PayFast payment collection</li>
+          <li>Multi-business support (SaaS-ready)</li>
+          <li>AI receptionist & missed-call automation</li>
+          <li>Real-time analytics & reporting</li>
+        </ul>
+        <div class="stayflow-cta">
+          <a href="https://app.tshwanelodigital.co.za/signup" target="_blank" rel="noopener" class="btn btn-primary">
+            Start Free Trial →
+          </a>
+          <a href="https://app.tshwanelodigital.co.za" target="_blank" rel="noopener" class="btn btn-ghost">
+            Open Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="stayflow-visual reveal">
+        <div class="sf-header">
+          <div class="sf-dots"><span></span><span></span><span></span></div>
+          <div class="sf-title">Stayflow — Bookings Dashboard</div>
+        </div>
+        <div class="sf-body">
+          <div class="sf-row">
+            <div class="name">🏠 <div><div>Unit 3 — Garden Suite</div><div style="font-size:11px;color:var(--muted);font-weight:400">Thabo M. · 2 nights</div></div></div>
+            <span class="sf-status confirmed">Confirmed</span>
+          </div>
+          <div class="sf-row">
+            <div class="name">💇 <div><div>Hair Appointment</div><div style="font-size:11px;color:var(--muted);font-weight:400">Lerato K. · 14:30</div></div></div>
+            <span class="sf-status pending">Pending</span>
+          </div>
+          <div class="sf-row">
+            <div class="name">🦷 <div><div>Dental Check-up</div><div style="font-size:11px;color:var(--muted);font-weight:400">Sipho N. · Tomorrow 09:00</div></div></div>
+            <span class="sf-status new">New</span>
+          </div>
+          <div class="sf-row">
+            <div class="name">💳 <div><div>Payment received</div><div style="font-size:11px;color:var(--muted);font-weight:400">PayFast · R1,200.00</div></div></div>
+            <span class="sf-status confirmed">Paid</span>
+          </div>
+          <div class="sf-row">
+            <div class="name">🤖 <div><div>AI Receptionist</div><div style="font-size:11px;color:var(--muted);font-weight:400">5 enquiries handled · 2 bookings</div></div></div>
+            <span class="sf-status new">Active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stayflow features grid -->
+    <div class="grid-3" style="margin-top:60px">
+      <div class="card reveal">
+        <div class="card-icon">📱</div>
+        <h3>Public Booking Pages</h3>
+        <p>Every business gets its own branded booking page — customers can book, pay a deposit, and receive instant confirmation.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🗂️</div>
+        <h3>Resource Management</h3>
+        <p>Rooms, staff, vehicles, equipment — anything bookable becomes a resource with its own capacity, price, and schedule.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🔔</div>
+        <h3>Smart Notifications</h3>
+        <p>Automated reminders, confirmations, and follow-ups via WhatsApp, SMS, and email — so you never miss a beat.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">💳</div>
+        <h3>PayFast Built-In</h3>
+        <p>Each business connects its own PayFast merchant account. Deposits and payments are collected automatically and confirmed via ITN.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🤖</div>
+        <h3>AI Receptionist</h3>
+        <p>Answers common questions, checks live availability, captures leads, and books appointments — 24/7 without human involvement.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📈</div>
+        <h3>Owner Dashboard</h3>
+        <p>See all your bookings, customers, revenue, and payment status in real time. Built for owners, not accountants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Packages</span>
+      <h2>Simple, honest pricing</h2>
+      <p>One-time build fee, then optional monthly care. Start with what you need — upgrade when you're ready.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <h3>Starter Website</h3>
+        <div class="desc">Perfect for getting your business online fast.</div>
+        <div class="price">R1,799</div>
+        <div class="price-note">Once-off</div>
+        <ul class="features">
+          <li>Mobile-friendly website</li>
+          <li>Business info & services</li>
+          <li>WhatsApp integration</li>
+          <li>Calls-to-action</li>
+          <li>Basic SEO structure</li>
+        </ul>
+        <div class="btn-group">
+          <button class="btn btn-ghost" onclick="payNow('Starter Website', 1799)">Pay Now</button>
+          <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20Website%20(R1%2C799)" target="_blank" rel="noopener" class="btn-wa-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Ask about this
+          </a>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Business Website</h3>
+        <div class="desc">A professional multi-page site for growing businesses.</div>
+        <div class="price">R4,499</div>
+        <div class="price-note">Once-off</div>
+        <ul class="features">
+          <li>Professional responsive design</li>
+          <li>Multiple pages</li>
+          <li>Services / products</li>
+          <li>WhatsApp & contact forms</li>
+          <li>Maps & social integration</li>
+          <li>Basic SEO & analytics</li>
+        </ul>
+        <div class="btn-group">
+          <button class="btn btn-ghost" onclick="payNow('Business Website', 4499)">Pay Now</button>
+          <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27m%20interested%20in%20the%20Business%20Website%20(R4%2C499)" target="_blank" rel="noopener" class="btn-wa-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Ask about this
+          </a>
+        </div>
+      </div>
+
+      <div class="price-card featured reveal">
+        <h3>Booking Website + Stayflow</h3>
+        <div class="desc">The complete booking & management system.</div>
+        <div class="price">R8,000</div>
+        <div class="price-note">Once-off + optional monthly</div>
+        <ul class="features">
+          <li>Professional website</li>
+          <li>Online booking system</li>
+          <li>Business dashboard</li>
+          <li>Customer & resource management</li>
+          <li>Notifications</li>
+          <li>PayFast integration</li>
+          <li>Booking confirmations</li>
+        </ul>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="payNow('Booking Website + Stayflow', 8000)">Pay Now</button>
+          <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27m%20interested%20in%20Booking%20Website%20%2B%20Stayflow%20(R8%2C000)" target="_blank" rel="noopener" class="btn-wa-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Ask about this
+          </a>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Full Digital System</h3>
+        <div class="desc">Everything — website, booking, payments & automation.</div>
+        <div class="price">R12,500</div>
+        <div class="price-note">Once-off</div>
+        <ul class="features">
+          <li>Custom website</li>
+          <li>Full booking system</li>
+          <li>PayFast integration</li>
+          <li>Business automation</li>
+          <li>Custom workflows</li>
+          <li>AI receptionist setup</li>
+        </ul>
+        <div class="btn-group">
+          <button class="btn btn-ghost" onclick="payNow('Full Digital System', 12500)">Pay Now</button>
+          <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27m%20interested%20in%20the%20Full%20Digital%20System%20(R12%2C500)" target="_blank" rel="noopener" class="btn-wa-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Ask about this
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monthly Care -->
+    <div class="card reveal" style="margin-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+      <div>
+        <h3 style="margin-bottom:6px">Monthly Care &amp; Maintenance</h3>
+        <p>Hosting, updates, security, backups & technical support.</p>
+      </div>
+      <div style="text-align:right">
+        <div class="price" style="font-size:2rem">R800<span style="font-size:.9rem;color:var(--muted);font-family:'Inter'">/month</span></div>
+        <button class="btn btn-ghost" style="margin-top:10px;padding:10px 22px;font-size:13px" onclick="payNow('Monthly Care & Maintenance', 800)">Subscribe</button>
+      </div>
+    </div>
+
+    <p class="form-note reveal" style="margin-top:20px">💡 Pay a 50% deposit to start — balance on delivery. All prices in ZAR.</p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>From first call to launch in days, not months</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div><h4>Discovery Call</h4><p>We identify your problem and the cost of that problem. No jargon — just a real conversation about your business.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div><h4>Free Live Demo</h4><p>We show you a working example of your digital system — not just describe it. You see exactly what you're getting.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div><h4>Proposal &amp; Deposit</h4><p>You receive a clear proposal. Pay a 50% deposit to kick off — the balance is due on delivery.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div><h4>Build &amp; Test</h4><p>We build your system, test everything thoroughly, and make sure it works flawlessly on every device.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">5</div>
+        <div><h4>Launch &amp; Grow</h4><p>Your system goes live. We train you, support you, and help you convert to monthly recurring services.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Businesses Choose Us</span>
+      <h2>Built for real South African businesses</h2>
+    </div>
+    <div class="grid-3">
+      <div class="quote card reveal" style="padding:28px">
+        <div style="color:#febc2e;font-size:1.05rem;letter-spacing:2px;margin-bottom:12px">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;color:var(--text)">"I was losing bookings because I couldn't answer my phone during appointments. Now Stayflow handles everything — I just check the dashboard."</p>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;color:#04140f;font-family:'Space Grotesk'">LM</div>
+          <div><div style="font-weight:600;font-size:.9rem">Lerato M.</div><div style="font-size:.8rem;color:var(--muted)">Salon Owner, Pretoria</div></div>
+        </div>
+      </div>
+      <div class="quote card reveal" style="padding:28px">
+        <div style="color:#febc2e;font-size:1.05rem;letter-spacing:2px;margin-bottom:12px">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;color:var(--text)">"Our guest house went from WhatsApp chaos to a proper booking system in under two weeks. Payments come in automatically now."</p>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;color:#04140f;font-family:'Space Grotesk'">JV</div>
+          <div><div style="font-weight:600;font-size:.9rem">Johan V.</div><div style="font-size:.8rem;color:var(--muted)">Guest House Owner, Centurion</div></div>
+        </div>
+      </div>
+      <div class="quote card reveal" style="padding:28px">
+        <div style="color:#febc2e;font-size:1.05rem;letter-spacing:2px;margin-bottom:12px">★★★★★</div>
+        <p style="font-style:italic;margin-bottom:20px;color:var(--text)">"The AI receptionist answers questions at 2am. I wake up to bookings I would have missed. Absolutely worth it."</p>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;color:#04140f;font-family:'Space Grotesk'">SN</div>
+          <div><div style="font-weight:600;font-size:.9rem">Sipho N.</div><div style="font-size:.8rem;color:var(--muted)">Dental Practice, Johannesburg</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Ready to build a digital system that actually grows your business?</h2>
+      <p>Get a free, no-obligation demo of your own custom digital system. See exactly what Tshwanelo Digital can build for you.</p>
+      <div class="btn-row">
+        <a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27d%20like%20a%20free%20demo%20of%20my%20own%20digital%20system" target="_blank" rel="noopener" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+          WhatsApp Us Now
+        </a>
+        <a href="#contact" class="btn btn-primary">Send a Message →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's build something great together</h2>
+      <p>Tell us about your business and we'll get back to you within 24 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <a href="https://wa.me/27781308301" target="_blank" rel="noopener" class="contact-item">
+          <div class="ic">📱</div>
+          <div><div class="lbl">WhatsApp</div><div class="val">+27 78 130 8301</div></div>
+        </a>
+        <a href="mailto:hello@tshwanelodigital.co.za" class="contact-item">
+          <div class="ic">✉️</div>
+          <div><div class="lbl">Email</div><div class="val">hello@tshwanelodigital.co.za</div></div>
+        </a>
+        <div class="contact-item">
+          <div class="ic">📍</div>
+          <div><div class="lbl">Location</div><div class="val">Pretoria, South Africa</div></div>
+        </div>
+        <a href="https://app.tshwanelodigital.co.za" target="_blank" rel="noopener" class="contact-item">
+          <div class="ic">⚙️</div>
+          <div><div class="lbl">Stayflow App</div><div class="val">app.tshwanelodigital.co.za</div></div>
+        </a>
+        <div class="contact-item">
+          <div class="ic">💳</div>
+          <div><div class="lbl">Payments</div><div class="val">Secure via PayFast</div></div>
+        </div>
+      </div>
+
+      <form class="reveal" id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" required placeholder="Your full name">
+          </div>
+          <div class="field">
+            <label>Business</label>
+            <input type="text" name="business" placeholder="Business name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="you@business.co.za">
+          </div>
+          <div class="field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" name="phone" placeholder="+27 ...">
+          </div>
+        </div>
+        <div class="field">
+          <label>What do you need?</label>
+          <select name="service">
+            <option>Starter Website (R1,799)</option>
+            <option>Business Website (R4,499)</option>
+            <option>Booking Website + Stayflow (R8,000)</option>
+            <option>Full Digital System (R12,500)</option>
+            <option>Monthly Care &amp; Maintenance (R800/mo)</option>
+            <option>AI Receptionist / Automation</option>
+            <option>Not sure — need advice</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tell us about your project</label>
+          <textarea name="message" placeholder="A few lines about your business and what you'd like to achieve..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message →</button>
+        <p class="form-note">We reply within 24 hours. No spam, ever.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fg1" x1="0" y1="0" x2="100" y2="100">
+                <stop offset="0%" stop-color="#00e0b8"/>
+                <stop offset="100%" stop-color="#00b8ff"/>
+              </linearGradient>
+              <linearGradient id="fg2" x1="0" y1="0" x2="100" y2="100">
+                <stop offset="0%" stop-color="#00b8ff"/>
+                <stop offset="100%" stop-color="#0d4a5c"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 4 L56 4 L58 15 C63 16 67.5 17.7 71.5 20 L80 11.5 L84 15.5 L75.5 24 C77.8 28 79.5 32.5 80.5 37.5 L91.5 39.5 L91.5 45.5 L80.5 47.5 C79.5 52.5 77.8 57 75.5 61 L84 69.5 L80 73.5 L71.5 65 C67.5 67.3 63 69 58 70 L56 81 L50 81 L48 70 C43 69 38.5 67.3 34.5 65 L26 73.5 L22 69.5 L30.5 61 C28.2 57 26.5 52.5 25.5 47.5 L14.5 45.5 L14.5 39.5 L25.5 37.5 C26.5 32.5 28.2 28 30.5 24 L22 15.5 L26 11.5 L34.5 20 C38.5 17.7 43 16 48 15 L50 4 Z" fill="url(#fg1)"/>
+            <circle cx="53" cy="42.5" r="11" fill="#0a0e17"/>
+            <path d="M53 42.5 L53 30" stroke="url(#fg2)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M53 42.5 L68 42.5" stroke="url(#fg2)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M53 42.5 L43 32" stroke="url(#fg2)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M53 42.5 L65 55" stroke="url(#fg2)" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="53" cy="28" r="3" fill="url(#fg2)"/>
+            <circle cx="70" cy="42.5" r="3" fill="url(#fg2)"/>
+            <circle cx="41" cy="30" r="3" fill="url(#fg2)"/>
+            <circle cx="67" cy="57" r="3" fill="url(#fg2)"/>
+          </svg>
+          <div class="logo-text-wrap">
+            <div class="logo-text">Tshwanelo<span>Digital</span></div>
+            <div class="logo-sub">Digital Solutions</div>
+          </div>
+        </div>
+        <p>Digital systems that work for your business. Websites, bookings, payments, automation &amp; AI for South African SMEs.</p>
+        <a href="https://wa.me/27781308301" target="_blank" rel="noopener" class="btn btn-wa" style="margin-top:18px;padding:10px 18px;font-size:13px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+          +27 78 130 8301
+        </a>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services">Website Development</a>
+        <a href="#services">Booking Systems</a>
+        <a href="#services">Payment Integration</a>
+        <a href="#services">AI Receptionist</a>
+        <a href="#services">Business Automation</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#stayflow">Stayflow</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="https://app.tshwanelodigital.co.za" target="_blank" rel="noopener">Owner Login</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get Started</h5>
+        <a href="https://wa.me/27781308301" target="_blank" rel="noopener">Free Demo</a>
+        <a href="#contact">Request Quote</a>
+        <a href="#pricing">Pay Online</a>
+        <a href="https://app.tshwanelodigital.co.za/signup" target="_blank" rel="noopener">Start with Stayflow</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Tshwanelo Digital Solutions. All rights reserved.</div>
+      <div class="made">Built with <span>♥</span> in Pretoria, South Africa</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://wa.me/27781308301?text=Hi%20Tshwanelo%20Digital%2C%20I%27d%20like%20to%20chat%20about%20a%20project" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+</a>
+<div class="wa-tooltip" id="waTooltip">💬 Chat with us</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+/* NAV SCROLL */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* MOBILE MENU */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+/* SCROLL REVEAL */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* WHATSAPP TOOLTIP (show after 3s, hide after 8s) */
+setTimeout(() => {
+  const tip = document.getElementById('waTooltip');
+  if (tip) {
+    tip.classList.add('show');
+    setTimeout(() => tip.classList.remove('show'), 5000);
+  }
+}, 3000);
+
+/* ===== PAYFAST CONFIG =====
+   Replace with your real credentials from https://www.payfast.co.za → Settings → Merchant Details
+   Set sandbox:false when ready to accept live payments */
+const PAYFAST_CONFIG = {
+  merchant_id: '10000100',       // ← YOUR MERCHANT ID
+  merchant_key: '46f0cd694581a', // ← YOUR MERCHANT KEY
+  return_url: 'https://tshwanelodigital.co.za/?payment=success',
+  cancel_url: 'https://tshwanelodigital.co.za/?payment=cancelled',
+  notify_url: 'https://tshwanelodigital.co.za/payfast-notify.php',
+  sandbox: true
+};
+
+function payNow(itemName, amount) {
+  const baseUrl = PAYFAST_CONFIG.sandbox
+    ? 'https://sandbox.payfast.co.za/eng/process'
+    : 'https://www.payfast.co.za/eng/process';
+
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = baseUrl;
+
+  const fields = {
+    merchant_id: PAYFAST_CONFIG.merchant_id,
+    merchant_key: PAYFAST_CONFIG.merchant_key,
+    return_url: PAYFAST_CONFIG.return_url,
+    cancel_url: PAYFAST_CONFIG.cancel_url,
+    notify_url: PAYFAST_CONFIG.notify_url,
+    m_payment_id: 'TD-' + Date.now(),
+    amount: amount.toFixed(2),
+    item_name: itemName,
+    item_description: 'Tshwanelo Digital — ' + itemName,
+    custom_str1: 'TshwaneloDigital'
+  };
+
+  for (const [key, value] of Object.entries(fields)) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = value;
+    form.appendChild(input);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
+/* CONTACT FORM → opens WhatsApp with prefilled message */
+function submitForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+
+  const msg =
+    `Hi Tshwanelo Digital! I'd like a quote.%0A%0A` +
+    `*Name:* ${encodeURIComponent(data.name)}%0A` +
+    `*Business:* ${encodeURIComponent(data.business || '-')}%0A` +
+    `*Email:* ${encodeURIComponent(data.email)}%0A` +
+    `*Phone:* ${encodeURIComponent(data.phone || '-')}%0A` +
+    `*Service:* ${encodeURIComponent(data.service)}%0A` +
+    `*Message:* ${encodeURIComponent(data.message || '-')}`;
+
+  window.open(`https://wa.me/27781308301?text=${msg}`, '_blank');
+  alert('Thanks ' + data.name + '! We\'ll be in touch within 24 hours. Opening WhatsApp so you can reach us instantly too.');
+  form.reset();
+}
+
+/* PAYMENT RESULT MESSAGES */
+const params = new URLSearchParams(window.location.search);
+if (params.get('payment') === 'success') {
+  setTimeout(() => alert('✅ Payment received! Thank you — we\'ll be in touch shortly.'), 400);
+}
+if (params.get('payment') === 'cancelled') {
+  setTimeout(() => alert('Payment cancelled. No worries — reach out if you need help.'), 400);
+}
+</script>
+
+</body>
+</html>

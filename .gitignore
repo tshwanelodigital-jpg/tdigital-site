@@ -1,0 +1,5 @@
+*.backup.*
+setup-tdigital.sh
+switch-to-path.sh
+.DS_Store
+*.log
